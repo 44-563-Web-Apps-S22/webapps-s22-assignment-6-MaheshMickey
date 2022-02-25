@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Presidents Page</title>
+ </head>
+<body>
+
+<h2>President guess by Nanganoori Mahesh Kumar</h2>
+
+<form>
+    <label for="form1_president">Enter secret president name</label>
+    <input type ="password" id="form1_presidentname" name="form1_president" min=10 max=50 step=2 value="George Washington" style="margin-left: 5px;"> <br>
+    <br>
+    <label for="form1_nick">Guess the president</label>
+    <input type ="text" required id="form1_nick" name="form1_nick" style="margin-left: 55px;"><br>
+    <br>
+    <input type="button" onclick="checkGuess()" value="Check the guess" style="margin-left: 90px;">
+</form>
+
+
+<p id="result" style="margin-left: 60px;">This text will be replaced </p>
+
+<script> 
+
+let correct = 0;
+let wrong = 0;
+
+function checkGuess(){
+    console.log("Getting values from the above Form")
+    pname = document.getElementById("form1_presidentname").value
+    gp = document.getElementById("form1_nick").value
+
+    output = document.getElementById("result")
+    if(gp == "")
+    {
+        alert("Please fill the required fields")
+    }
+
+    else if(pname==gp)
+    {
+       alert("You got it right")
+       output.innerHTML = "You got it right"
+       correct=1
+    }
+    else{
+        alert("Wrong President")
+        output.innerHTML = "Wrong President"
+        wrong=1
+    }
+}
+</script>
+
+</body>
+</html> 
