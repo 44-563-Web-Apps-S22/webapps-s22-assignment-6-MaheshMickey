@@ -17,9 +17,18 @@
 
     <input type="button" onclick="orderComputer()" value="Order a computer">
 </form>
-
-
 <p id="result">This text will be replaced </p>
+<br><br>
+<form>
+    <label for="form2_propertyname">Enter a property name</label>
+    <input type ="text" id="form2_prop_name" name="form2_propertyname" value="engraved" style = "margin-left: 10px;"><br><br>
+
+    <label for="form2_propertyvalue">Enter a Value</label>
+    <input type ="text" id="form2_prop_value" name="form2_propertyvalue" value="property" style = "margin-left: 60px;"><br><br>
+
+    <input type="button" onclick="updateComputer()" value="Update computer">
+</form>
+<p id="updateresult">This text will be replaced </p>
 
 <script> 
 let my_computer = ""
@@ -58,6 +67,13 @@ function orderComputer(){
     {
         alert("Please choose any option")
     }
+}
+
+function updateComputer(){
+    prop_name = document.getElementById("form2_prop_name").value
+    prop_value = document.getElementById("form2_prop_value").value
+    let my_computer = [prop_name,prop_value]
+    document.getElementById("updateresult").innerHTML = my_computer
 }
 </script>
 
