@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+
+<h2>Mahesh Orders a computer</h2>
+
+<form>
+    <label for="form1_memory">Extra Memory</label>
+    <input type ="checkbox" id="form1_memory" name="form1_cmemory" value="extra"><br>
+
+    <label for="form1_mouse">Mouse</label>
+    <input type ="checkbox" id="form1_mouse" name="form1_cmouse" value="mouse"><br>
+
+    <label for="form1_cell">Cell service</label>
+    <input type ="checkbox" id="form1_cell" name="form1_ccell" value="cell"><br>
+
+    <input type="button" onclick="orderComputer()" value="Order a computer">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+let my_computer = ""
+function orderComputer(){
+    my_computer = ""
+    mem = document.getElementById("form1_memory")
+    mou = document.getElementById("form1_mouse")
+    cel = document.getElementById("form1_cell")
+
+    if(mem.checked)
+    {
+        my_computer = true;    
+        document.getElementById("result").innerHTML = "Extra Memory "
+    }
+    else {
+        my_computer = false;
+    }
+    if(mou.checked)
+    {
+        my_computer = true;
+        document.getElementById("result").innerHTML ="Mouse"
+    }
+    else{
+        my_computer = false;
+    }
+    if(cel.checked)
+    {
+        my_computer=true;
+        document.getElementById("result").innerHTML ="Cell Service"
+    }
+    else{
+        my_computer=false;
+    }
+}
+</script>
+
+</body>
+</html> 

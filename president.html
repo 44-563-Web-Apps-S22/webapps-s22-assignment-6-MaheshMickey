@@ -20,6 +20,10 @@
 
 <p id="result" style="margin-left: 60px;">This text will be replaced </p>
 
+<div class="container">
+    <img src="Neddicky.jpg" id="image1" class="img-fluid" alt="Neddicky" height="100" width="100" onclick="swapImage()">
+</div>
+
 <script> 
 
 let correct = 0;
@@ -47,6 +51,22 @@ function checkGuess(){
         output.innerHTML = "Wrong President"
         wrong=1
     }
+}
+let useImage = 1
+function swapImage(){
+    switch(useImage){
+        case 1 : document.getElementById("image1").src = "At.jpg"
+                useImage=2
+                break; 
+        case 2 : document.getElementById('image1').src = "nightingale.jpg"
+                useImage=3
+                break;
+        case 3 : document.getElementById("image1").src = "Neddicky.jpg"
+                useImage =4
+                break;
+        default : break;
+    }
+
 }
 </script>
 
