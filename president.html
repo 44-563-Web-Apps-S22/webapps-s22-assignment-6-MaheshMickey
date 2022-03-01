@@ -12,7 +12,7 @@
     <input type ="password" id="form1_presidentname" name="form1_president" min=10 max=50 step=2 value="George Washington" style="margin-left: 5px;"> <br>
     <br>
     <label for="form1_nick">Guess the president</label>
-    <input type ="text" required id="form1_nick" name="form1_nick" style="margin-left: 55px;"><br>
+    <input type ="text" required id="form1_pres" name="form1_president" style="margin-left: 55px;"><br>
     <br>
     <input type="button" onclick="checkGuess()" value="Check the guess" style="margin-left: 90px;">
 </form>
@@ -28,11 +28,11 @@
 
 let correct = 0;
 let wrong = 0;
-
+let count = 0;
 function checkGuess(){
     console.log("Getting values from the above Form")
     pname = document.getElementById("form1_presidentname").value
-    gp = document.getElementById("form1_nick").value
+    gp = document.getElementById("form1_pres").value
 
     output = document.getElementById("result")
     if(gp == "")
@@ -42,15 +42,25 @@ function checkGuess(){
 
     else if(pname==gp)
     {
+        count=0;
        alert("You got it right")
        output.innerHTML = "You got it right"
-       correct=1
+       correct+=1
     }
     else{
+        count+=1;
         alert("Wrong President")
         output.innerHTML = "Wrong President"
-        wrong=1
+        wrong+=1
+        if(count>=3)
+        {
+            wrongGuess()
+        }
     }
+}
+function wrongGuess(){
+    alert("Sorry, game over!")
+    output.innerHTML = "Sorry, game over!"
 }
 let useImage = 1
 function swapImage(){
